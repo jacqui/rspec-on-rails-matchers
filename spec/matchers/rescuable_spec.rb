@@ -22,10 +22,10 @@ describe "ActiveSupport rescuable matchers" do
   end
   
   it "should report that the instance rescues ArgumentError with #arg_handler" do
-    @instance.should @matchers.rescue_exception(ArgumentError, :with => :arg_handler)
+    @instance.should @matchers.rescue_exception(ArgumentError.new, :with => :arg_handler)
   end
   
   it "should report that the instance does NOT rescue Exception with #arg_handler" do
-    @instance.should_not @matchers.rescue_exception(Exception, :with => :arg_handler)
+    @instance.should_not @matchers.rescue_exception(Exception.new, :with => :arg_handler)
   end
 end
