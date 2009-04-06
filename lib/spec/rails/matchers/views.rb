@@ -6,11 +6,20 @@ module Spec
           have_tag("form[method=post][action=#{url_or_path}]").matches?(response)
         end
       end
-
+      
       def have_form_putting_to(url_or_path)
         return simple_matcher("have a form submitting via PUT to '#{url_or_path}'") do |response|
-          have_tag("form[method=post][action=#{url_or_path}]").matches?(response)
-          have_tag("input[name=_method][type=hidden][value=put]").matches?(response)
+          have_tag("form[method=post][action=#{url_or_path}]").matches?(response) do
+            with_tag("input[name=_method][type=hidden][value=put]").matches?(response)
+          end
+        end
+      end
+      
+      def have_form_deleting(url_or_path)
+        return simple_matcher("have a form submitting via PUT to '#{url_or_path}'") do |response|
+          have_tag("form[method=post][action=#{url_or_path}]").matches?(response) do
+            with_tag("input[name=_method][type=hidden][value=put]").matches?(response)
+          end
         end
       end
       
