@@ -1,4 +1,5 @@
 require 'spec/rails/matchers/observers'
+require 'spec/rails/matchers/models'
 require 'spec/rails/matchers/associations'
 require 'spec/rails/matchers/validations'
 require 'spec/rails/matchers/controllers'
