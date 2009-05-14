@@ -1,7 +1,6 @@
-remove_attributes_protected_from_mass_assignment
-
 Spec::Matchers.create :allow_mass_assignment_of do |attribute|
   match do |model|
+    attribute = attribute.to_s
     model.send(:remove_attributes_protected_from_mass_assignment, {attribute => 'value'}).should == {attribute => 'value'}
   end
   
