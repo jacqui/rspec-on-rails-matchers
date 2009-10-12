@@ -1,6 +1,12 @@
 rspec-on-rails-matchers
 =======================
 
+I forked the rspec-on-rails-matchers plugin from fidothe on github as one of it's libraries uses RSpec stubbing syntax. I prefer to mock_with :mocha in my specs, so I made the (small) change for mocha compatibility.
+
+Note: you will have problems using this plugin if you don't mock_with :mocha :)
+
+The rest of this readme should still be valid.
+
 Setup
 ------
 
